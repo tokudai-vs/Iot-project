@@ -12,7 +12,7 @@ import numpy as np
 #########################
 
 
-client_name = sys.argv[1]  # client name should be unique
+client_name = 'fan'+str(sys.argv[1])  # client name should be unique
 
 # Required functionality variables
 power = False

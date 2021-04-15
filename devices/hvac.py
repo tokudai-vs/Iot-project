@@ -15,7 +15,7 @@ import random
 #########################
 
 
-client_name = sys.argv[1]  # client name should be unique
+client_name = 'hvac'+str(sys.argv[1])  # client name should be unique
 
 # Required functionality variables
 power = False
