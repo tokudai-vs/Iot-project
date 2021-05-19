@@ -22,6 +22,26 @@ brightness = 10
 color = [255, 255, 255]
 
 
+def parse_incoming_message(incoming_message):
+    # incoming message format : client_name/{power/brightness/color/status}/value
+    c_name, category, value = incoming_message.strip().split("/")
+    if c_name != client_name:
+        print("Incorrect client")
+    return category, value
+
+
+def actions(category, value):
+    if category == "power":
+        power = value
+    if category == "brightness":
+        brightness = value
+    if category == "color":
+        color = value
+    if category == "status":
+        status_string = "power: " + str(power) + ", brightness: " + str(brightness) + ", color: " + str(color)
+        client.publish("controller_return_channel",client_name + "/" + status_string)
+
+
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Connected to broker")
@@ -32,6 +52,7 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, message):
+    cat, val = parse_incoming_message(message.payload.decode("utf-8"))
     # if message.topic.strip().split("/")[0] == "location":
     #     print("Received message from HQ")
     #     dist.clear()

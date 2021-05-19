@@ -17,7 +17,7 @@ parser.add_argument('--hvac', type=int, default= 1)
 
 all_devices = []
 
-client_name = "HQ"
+client_name = "controller"
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -29,6 +29,7 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, message):
+    pass
 
 
 Connected = False  # global variable for the state of the connection
@@ -44,12 +45,14 @@ client.loop_start()  # start the loop
 
 
 for cl in all_devices:
-    client.subscribe(cl)
+    client.subscribe("controller_return_channel")
 while Connected != True:  # Wait for connection
     time.sleep(0.1)
 
 try:
-
+    while True:
+        client.publish("fan1",str(count))
+        count += 1
 except KeyboardInterrupt:
     print("exiting")
     client.disconnect()

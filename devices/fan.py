@@ -12,11 +12,29 @@ import numpy as np
 #########################
 
 
-client_name = 'fan'+str(sys.argv[1])  # client name should be unique
-
+# client_name = 'fan'+str(sys.argv[1])  # client name should be unique
+client_name = "fan1"
 # Required functionality variables
 power = False
 speed = 0
+
+
+def parse_incoming_message(incoming_message):
+    # incoming message format : client_name/{power/speed/status}/value
+    c_name, category, value = incoming_message.strip().split("/")
+    if c_name != client_name:
+        print("Incorrect client")
+    return category, value
+
+
+def actions(category, value):
+    if category == "power":
+        power = value
+    if category == "speed":
+        speed = value
+    if category == "status":
+        status_string = "power: " + str(power) + ", speed: " + str(speed)
+        client.publish("controller_return_channel",client_name + "/" + status_string)
 
 
 def on_connect(client, userdata, flags, rc):
@@ -29,6 +47,9 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, message):
+    cat, val = parse_incoming_message(message.payload.decode("utf-8"))
+
+
     # if message.topic.strip().split("/")[0] == "location":
     #     print("Received message from HQ")
     #     dist.clear()
@@ -68,7 +89,7 @@ client.on_connect = on_connect  # attach function to callback
 client.on_message = on_message  # attach function to callback
 client.connect(broker_address, port=port)  # connect to broker
 client.loop_start()  # start the loop
-# client.subscribe( + client_name)
+client.subscribe(client_name)
 # client.subscribe( + client_name)
 
 while Connected != True:  # Wait for connection

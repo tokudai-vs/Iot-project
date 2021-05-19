@@ -24,6 +24,28 @@ fan = random.randint(0,3)
 mode = 'dry'
 
 
+def parse_incoming_message(incoming_message):
+    # incoming message format : client_name/{power/temp/fan/mode/status}/value
+    c_name, category, value = incoming_message.strip().split("/")
+    if c_name != client_name:
+        print("Incorrect client")
+    return category, value
+
+
+def actions(category, value):
+    if category == "power":
+        power = value
+    if category == "temp":
+        temp = value
+    if category == "fan":
+        fan = value
+    if category == "mode":
+        mode = value
+    if category == "status":
+        status_string = "power: " + str(power) + ", temp: " + str(temp) + ", fan: " + str(fan) + ", mode: " + str(mode)
+        client.publish("controller_return_channel",client_name + "/" + status_string)
+
+
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Connected to broker")
@@ -34,6 +56,7 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, message):
+    cat, val = parse_incoming_message(message.payload.decode("utf-8"))
     # if message.topic.strip().split("/")[0] == "location":
     #     print("Received message from HQ")
     #     dist.clear()
