@@ -4,9 +4,7 @@ import argparse
 
 #########################
 # Required functionality:
-#     Profiles
-#     Communication with devices
-#     Communication with UI
+#     Communication with controller
 #########################
 
 parser = argparse.ArgumentParser(description='get configuration values')
@@ -17,17 +15,7 @@ parser.add_argument('--hvac', type=int, default= 1)
 
 all_devices = []
 
-client_name = "controller"
-
-def parse_incoming_message(incoming_message):
-    # incoming message format : client_name/status
-    c_name, status = [x for x in incoming_message.strip().split("/")]
-    if c_name[:4] == "fans":
-        return "fan", status
-    if c_name[:4] == "hvac":
-        return "hvac", status
-    if c_name[:6] == "lights":
-        return "lights", status
+client_name = "frontend"
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -39,7 +27,7 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, message):
-    cat, status = parse_incoming_message(message.payload.decode("utf-8"))
+    pass
 
 
 Connected = False  # global variable for the state of the connection
@@ -52,8 +40,10 @@ client.on_connect = on_connect  # attach function to callback
 client.on_message = on_message  # attach function to callback
 client.connect(broker_address, port=port)  # connect to broker
 client.loop_start()  # start the loop
-client.subscribe("controller_return_channel")
 
+
+for cl in all_devices:
+    client.subscribe("controller_return_channel")
 while Connected != True:  # Wait for connection
     time.sleep(0.1)
 

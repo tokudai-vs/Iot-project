@@ -21,7 +21,7 @@ speed = 0
 
 def parse_incoming_message(incoming_message):
     # incoming message format : client_name/{power/speed/status}/value
-    c_name, category, value = incoming_message.strip().split("/")
+    c_name, category, value = [x for x in incoming_message.strip().split("/")]
     if c_name != client_name:
         print("Incorrect client")
     return category, value
@@ -48,34 +48,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
     cat, val = parse_incoming_message(message.payload.decode("utf-8"))
-
-
-    # if message.topic.strip().split("/")[0] == "location":
-    #     print("Received message from HQ")
-    #     dist.clear()
-    #     uav_dist.clear()
-    #     t = next(lines).strip().split(" ")
-    #     distances(message.payload, t)
-
-    #     for cl in all_clients:
-    #         if cl != client_name:
-    #             print("Communication sent to other UAV")
-    #             client.publish(str("vehicle/" + cl), client_name + ": " + str(dist))
-
-    # elif message.topic.strip().split("/")[0] == "vehicle":
-    #     print("Communication received from other UAV")
-    #     mes = message.payload.decode("UTF-8")
-    #     # print(d)
-    #     uav = mes.split(":")[0]
-    #     d = mes.split(":")[1]
-    #     uav_dist[uav] = d
-    #     if len(uav_dist) == 5:
-    #         result = black_magic()
-    #         result = [str(x) for x in result]
-
-    #         client.publish(str("final/" + client_name), " ".join(result))
-    #         print("Sent message to HQ")
-
+    actions(cat, val)
 
 Connected = False  # global variable for the state of the connection
 broker_address = "127.0.0.1"  # Broker address
