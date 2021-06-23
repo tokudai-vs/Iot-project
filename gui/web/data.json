@@ -1,0 +1,16 @@
+{
+    "LivingRoom": {
+        "AC": {
+            "status": "on",
+            "temperature": 19
+        },
+        "Light": {
+            "status": "off",
+            "brightness": 50
+        },
+        "Fan": {
+            "status": "on",
+            "speed": 1
+        }
+    }
+}
