@@ -1,0 +1,166 @@
+{
+    "BedRoom": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 14
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 4,
+                "status": "on"
+            },
+            "F2": {
+                "speed": 5,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 29,
+                "status": "on"
+            },
+            "L2": {
+                "brightness": 75,
+                "status": "on"
+            },
+            "L3": {
+                "brightness": 96,
+                "status": "on"
+            }
+        }
+    },
+    "Children's Room": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 14
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 4,
+                "status": "on"
+            },
+            "F2": {
+                "speed": 5,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 29,
+                "status": "on"
+            },
+            "L2": {
+                "brightness": 75,
+                "status": "on"
+            },
+            "L3": {
+                "brightness": 96,
+                "status": "on"
+            }
+        }
+    },
+    "DrawingRoom": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 11
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 1,
+                "status": "on"
+            },
+            "F2": {
+                "speed": 3,
+                "status": "on"
+            },
+            "F3": {
+                "speed": 2,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 75,
+                "status": "on"
+            },
+            "L2": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L3": {
+                "brightness": 85,
+                "status": "on"
+            },
+            "L4": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L5": {
+                "brightness": 97,
+                "status": "on"
+            }
+        }
+    },
+    "Kitchen": {
+        "AC": {
+            "AC1": {
+                "status": "off",
+                "temperature": 42
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 4,
+                "status": "off"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 29,
+                "status": "off"
+            },
+            "L2": {
+                "brightness": 87,
+                "status": "on"
+            }
+        }
+    },
+    "LivingRoom": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 0
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 1,
+                "status": "on"
+            },
+            "F2": {
+                "speed": 4,
+                "status": "on"
+            },
+            "F3": {
+                "speed": 2,
+                "status": "on"
+            },
+            "F4": {
+                "speed": 5,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 100,
+                "status": "on"
+            }
+        }
+    }
+}

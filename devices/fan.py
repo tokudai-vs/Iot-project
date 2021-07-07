@@ -12,8 +12,8 @@ import numpy as np
 #########################
 
 
-# client_name = 'fan'+str(sys.argv[1])  # client name should be unique
-client_name = "fan1"
+client_name = str(sys.argv[1])  # client name should be unique
+# client_name = "fan1"
 # Required functionality variables
 power = False
 speed = 0
@@ -30,8 +30,10 @@ def parse_incoming_message(incoming_message):
 def actions(category, value):
     if category == "power":
         power = value
+        print("power set to ", value)
     if category == "speed":
         speed = value
+        print("speed set to", value)
     if category == "status":
         status_string = "power: " + str(power) + ", speed: " + str(speed)
         client.publish("controller_return_channel",client_name + "/" + status_string)
@@ -49,6 +51,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, message):
     cat, val = parse_incoming_message(message.payload.decode("utf-8"))
     actions(cat, val)
+    # print(message.payload.decode("utf-8"))
 
 Connected = False  # global variable for the state of the connection
 broker_address = "127.0.0.1"  # Broker address

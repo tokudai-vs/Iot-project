@@ -1,0 +1,64 @@
+{
+    "LivingRoom": {
+        "AC": {
+            "status": "on",
+            "temperature": 18
+        },
+        "Light": {
+            "L1": {
+                "status": "off",
+                "brightness": 9
+            },
+            "L2": {
+                "status": "on",
+                "brightness": 19
+            }
+        },
+        "Fan": {
+            "status": "on",
+            "speed": 3
+        }
+    },
+    "Kitchen": {
+        "AC": {
+            "status": "off",
+            "temperature": 24
+        },
+        "Light": {
+            "status": "on",
+            "brightness": 11
+        },
+        "Fan": {
+            "status": "off",
+            "speed": 3
+        }
+    },
+    "BedRoom": {
+        "AC": {
+            "status": "off",
+            "temperature": 20
+        },
+        "Light": {
+            "status": "on",
+            "brightness": 11
+        },
+        "Fan": {
+            "status": "off",
+            "speed": 3
+        }
+    },
+    "DrawingRoom": {
+        "AC": {
+            "status": "off",
+            "temperature": 17
+        },
+        "Light": {
+            "status": "on",
+            "brightness": 11
+        },
+        "Fan": {
+            "status": "off",
+            "speed": 3
+        }
+    }
+}

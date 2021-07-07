@@ -1,16 +1,214 @@
 {
-    "LivingRoom": {
+    "BedRoom": {
         "AC": {
-            "status": "on",
-            "temperature": 19
-        },
-        "Light": {
-            "status": "off",
-            "brightness": 50
+            "AC1": {
+                "status": "on",
+                "temperature": 16
+            }
         },
         "Fan": {
-            "status": "on",
-            "speed": 1
+            "F1": {
+                "speed": 3,
+                "status": "on"
+            },
+            "F2": {
+                "speed": 5,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 30,
+                "status": "on"
+            },
+            "L2": {
+                "brightness": 47,
+                "status": "off"
+            }
+        }
+    },
+    "DrawingRoom": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 10
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 4,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 25,
+                "status": "on"
+            }
+        }
+    },
+    "Kitchen": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 47
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 5,
+                "status": "on"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 30,
+                "status": "on"
+            }
+        }
+    },
+    "LivingRoom": {
+        "AC": {
+            "AC1": {
+                "status": "on",
+                "temperature": 15
+            }
+        },
+        "Fan": {
+            "F1": {
+                "speed": 3,
+                "status": "on"
+            },
+            "F2": {
+                "speed": 3,
+                "status": "off"
+            },
+            "F3": {
+                "speed": 3,
+                "status": "off"
+            },
+            "F4": {
+                "speed": 3,
+                "status": "off"
+            },
+            "F5": {
+                "speed": 1,
+                "status": "on"
+            },
+            "F6": {
+                "speed": 3,
+                "status": "off"
+            }
+        },
+        "Light": {
+            "L1": {
+                "brightness": 42,
+                "status": "on"
+            },
+            "L10": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L11": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L12": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L13": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L14": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L15": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L16": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L17": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L18": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L19": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L2": {
+                "brightness": 56,
+                "status": "on"
+            },
+            "L20": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L21": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L22": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L23": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L24": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L25": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L26": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L27": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L3": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L4": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L5": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L6": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L7": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L8": {
+                "brightness": 47,
+                "status": "off"
+            },
+            "L9": {
+                "brightness": 47,
+                "status": "off"
+            }
         }
     }
 }

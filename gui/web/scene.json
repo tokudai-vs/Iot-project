@@ -1,0 +1,86 @@
+{
+    "Scene1": {
+        "BedRoom": {
+            "AC": {
+                "AC1": {
+                    "status": "on",
+                    "temperature": 20
+                }
+            },
+            "Fan": {
+                "F1": {
+                    "status": "on",
+                    "speed": 2
+                    
+                }
+            },
+            "Light": {
+                "L1": {
+                    "status": "on",
+                    "brightness": 30
+                    
+                }
+            }
+        },
+        "DrawingRoom": {
+            "Light": {
+                "L1": {
+                    "brightness": 25,
+                    "status": "on"
+                }
+            }
+        },
+        "Kitchen": {},
+        "LivingRoom": {
+            "Light": {
+                "L1": {
+                    "brightness": 25,
+                    "status": "on"
+                }
+            }
+        }
+    },
+
+
+
+
+    "Scene2": {
+        "BedRoom": {
+            "AC": {
+                "AC1": {
+                    "status": "on",
+                    "temperature": 20
+                }
+            },
+            "Fan": {
+                "F1": {
+                    "speed": 2,
+                    "status": "on"
+                }
+            },
+            "Light": {
+                "L1": {
+                    "brightness": 30,
+                    "status": "on"
+                }
+            }
+        },
+        "DrawingRoom": {
+            "Light": {
+                "L1": {
+                    "brightness": 25,
+                    "status": "on"
+                }
+            }
+        },
+        "Kitchen": {},
+        "LivingRoom": {
+            "Light": {
+                "L1": {
+                    "brightness": 25,
+                    "status": "on"
+                }
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@ import random
 #########################
 
 
-client_name = 'light'+str(sys.argv[1])  # client name should be unique
+client_name = str(sys.argv[1])  # client name should be unique
 
 # Required functionality variables
 power = False
@@ -33,8 +33,10 @@ def parse_incoming_message(incoming_message):
 def actions(category, value):
     if category == "power":
         power = value
+        print("power set to ", value)
     if category == "brightness":
         brightness = value
+        print("brightness set to", value)
     if category == "color":
         color = value
     if category == "status":
@@ -54,6 +56,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, message):
     cat, val = parse_incoming_message(message.payload.decode("utf-8"))
     actions(cat, val)
+    # print(message.payload.decode("utf-8"))
 
 
 Connected = False  # global variable for the state of the connection
