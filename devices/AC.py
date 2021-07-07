@@ -35,10 +35,13 @@ def parse_incoming_message(incoming_message):
 def actions(category, value):
     if category == "power":
         power = value
-        print("power set to ", value)
+        if value:
+            print("Powered on")
+        else:
+            print("Powered off")
     if category == "temp":
         temp = value
-        print("temp set to", value)
+        print("Temperature set to", value)
     if category == "fan":
         fan = value
     if category == "mode":

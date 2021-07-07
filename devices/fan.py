@@ -30,10 +30,13 @@ def parse_incoming_message(incoming_message):
 def actions(category, value):
     if category == "power":
         power = value
-        print("power set to ", value)
+        if value:
+            print("Powered on")
+        else:
+            print("Powered off")
     if category == "speed":
         speed = value
-        print("speed set to", value)
+        print("Speed set to", value)
     if category == "status":
         status_string = "power: " + str(power) + ", speed: " + str(speed)
         client.publish("controller_return_channel",client_name + "/" + status_string)

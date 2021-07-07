@@ -131,7 +131,6 @@ def initial_start(data):
                 all_devices.append(arg)
                 run_device(device_type,arg)
 
-initial_start(data)
 
 
 

@@ -33,10 +33,13 @@ def parse_incoming_message(incoming_message):
 def actions(category, value):
     if category == "power":
         power = value
-        print("power set to ", value)
+        if value:
+            print("Powered on")
+        else:
+            print("Powered off")
     if category == "brightness":
         brightness = value
-        print("brightness set to", value)
+        print("Brightness set to", value)
     if category == "color":
         color = value
     if category == "status":
